@@ -76,6 +76,7 @@ float:left;
 float:right;
 border-left:solid 2px #C7D4E1;
 width:858px;
+margin:1px;
 }
 .clr{
 clear:both;
@@ -256,4 +257,10 @@ margin: 10px 15px 5px;
 
 .gal{
 padding-right:40px;
+}
+#text{
+margin-left:15px;
+margin-top:0;
+font-family:Tahoma, sans-serif;
+color:black;
 }
