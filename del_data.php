@@ -16,7 +16,8 @@ $table = "test_table";
 @mysql_select_db($dbName) or die (mysql_error());
  
 /* Если была нажата ссылка удаления, удаляем запись */
-$del = $query = "delete from $table where (id='del')";
+$del = $query = "delete from $table where (id='" .(int)$_GET['del'] . "')";
+
 /* Выполняем запрос. Если произойдет ошибка - вывести ее. */
 @mysql_query($query) or die(mysql_error());
  
@@ -66,7 +67,6 @@ td { padding: 3px; text-align: center; vertical-align: middle; }
 while ($row = mysql_fetch_array($res)) {
     echo "<tr>\n";
     echo "<td>".$row['id']."</td>\n";
-
     echo "<td>".$row['message']."</td>\n";
     /* Генерируем ссылку для удаления поля */
     echo "<td><a name=\"del\" href=\"del_data.php?del=".$row["id"]."\">Удалить</a></td>\n";
