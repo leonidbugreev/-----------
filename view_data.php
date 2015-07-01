@@ -41,11 +41,7 @@
 <option value="3">Казахский	</option>
 </select>
 </form>
-	<ul>
-		<li><a href="#">Главная</a></li>
-		<li><a href="#">Помощь </a></li>
-		<li><a href="#">Контакты </a></li>
-	</ul>
+	
 
 </div>
 <div id="container">
@@ -97,6 +93,9 @@ $table = "test_table";
  
 /* Создаем соединение */
 @mysql_connect($hostname, $username, $password) or die ("Не могу создать соединение");
+mysql_query("SET NAMES 'utf8';"); 
+mysql_query("SET CHARACTER SET 'utf8';"); 
+mysql_query("SET SESSION collation_connection = 'utf8_general_ci';"); 
  
 /* Выбираем базу данных. Если произойдет ошибка - вывести ее */
 mysql_select_db($dbName) or die (mysql_error());
@@ -148,9 +147,9 @@ mysql_close();
 ?>
 </div>
 <div class="clr">
-<img src="images/3.png" class="zv" width="50px" height="50px"><p class="MR">© Минестерстово обороны Республики Казахстан<br>
+<img src="images/3.png" class="zv" width="50px" height="50px"><p class="MR">© Министерство обороны Республики Казахстан<br>
 Все права защищены</p>
-<p class="lo" align="right" valign="right">Разработка-Logytex</p>
+<p class="lo" align="right" valign="right">Разработка-<a href="http://localhost/py/ ">Logytex </a></p>
 </div>
 </div>
 </body>

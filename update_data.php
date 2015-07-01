@@ -1,4 +1,5 @@
 ﻿<?php
+ header("Content-Type: text/html; charset=utf-8");
 /* Соединяемся с базой данных */
 $hostname = "localhost"; // название/путь сервера, с MySQL
 $username = "root"; // имя пользователя (в Denwer`е по умолчанию "root")
@@ -10,6 +11,9 @@ $table = "test_table";
  
 /* Создаем соединение */
 @mysql_connect($hostname, $username, $password) or die ("Не могу создать соединение");
+mysql_query("SET NAMES 'utf8';"); 
+mysql_query("SET CHARACTER SET 'utf8';"); 
+mysql_query("SET SESSION collation_connection = 'utf8_general_ci';"); 
  
 /* Выбираем базу данных. Если произойдет ошибка - вывести ее */
 @mysql_select_db($dbName) or die (mysql_error());
