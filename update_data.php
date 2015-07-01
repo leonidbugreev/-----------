@@ -1,5 +1,4 @@
 ﻿<?php
- 
 /* Соединяемся с базой данных */
 $hostname = "localhost"; // название/путь сервера, с MySQL
 $username = "root"; // имя пользователя (в Denwer`е по умолчанию "root")
@@ -16,8 +15,11 @@ $table = "test_table";
 @mysql_select_db($dbName) or die (mysql_error());
  
 /* Если была нажата кнопка редактирования, вносим изменения */
-if(@$submit_edit) {
-$query = "UPDATE $table SET message='$test_mess' WHERE id='update'";
+if(@$_POST['submit_edit']) {
+$query = "UPDATE $table SET  message='".$_POST['test_mess']."' WHERE id='".$_POST['update']."'";
+
+ 
+ 
 /* Выполняем запрос. Если произойдет ошибка - вывести ее. */
 @mysql_query($query) or die (mysql_error());
 }
@@ -61,11 +63,12 @@ textarea { width: 250px; height: 100px; border: solid 1px #CCC; color: #FF6666; 
 ");
  
 /* Цикл вывода данных из базы конкретных полей */
-while ($row = mysql_fetch_array($res)) {
+while ($row = @mysql_fetch_array($res)) {
     echo "<form action=\"update_data.php\" method=\"post\" name=\"edit_form\">\n";
     echo "<input type=\"hidden\" name=\"update\" value=\"".$row["id"]."\" />\n";
     echo "<table border=\"1\" cellpadding=\"0\" cellspacing=\"0\">\n";
-    echo "<tr>\n";
+   
+   
     echo "<td>Сообщение:</td><td><textarea name=\"test_mess\">".$row['message']."</textarea></td>\n";
     echo "</tr><tr>\n";
     echo "<td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"submit_edit\" class=\"buttons\" value=\"Сохранить изменения\" /></td>\n";
