@@ -20,10 +20,17 @@
     </script>
 </head>
 <body>
-
-<div id="page" class="rad">
-<div id="sh" valign="middle" align="center">
+<div id="menu">
 	<ul>
+		<li><a href="#">Главная</a></li>
+		<li><a href="#">Помощь</a></li>
+		<li><a href="#">Контакты</a></li>
+		<li><a href="#">Регистрация</a></li>
+	</ul>
+</div> 
+<div id="page" class="rad">
+<div id="sh" class="navbar navbar-fixed-top" >
+	<ul class="nav">
 		<li><a href="#">Руководство</a></li>
 		<li><a href="#">Документы </a></li>
 		<li><a href="#">Структура </a></li>
@@ -69,14 +76,7 @@
            
         </div>
         </div>
-<div id="menu">
-	<ul>
-		<li><a href="#">Главная</a></li>
-		<li><a href="#">Помощь</a></li>
-		<li><a href="#">Контакты</a></li>
-		<li><a href="#">Регистрация</a></li>
-	</ul>
-</div>
+
 <div id="cont">
 <img src="images/mjk.jpg" class="right" width="150px" height="200px" id="mjk">
 <br/>

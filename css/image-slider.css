@@ -133,8 +133,8 @@ border-bottom:2px solid #C7D4E1;
 .preview
 {
 	position: absolute;
-	width: 450px;
-	height: 260px;
+	width: 500px;
+	height: 300px;
 	background-color: White;
 	padding: 2px;
 	border: solid 1px black;
@@ -180,8 +180,8 @@ border-bottom:2px solid #C7D4E1;
 }
 .preview .img-large img
 {
-	width: 450px;
-	height: 260px;
+	width: 500px;
+	height: 300px;
 }
 
 .outer
