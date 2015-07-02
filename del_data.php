@@ -48,7 +48,7 @@ echo ("
 <h3>Удаление данных</h3>"
 
 );
- echo ("<a href=\"index.html\" id='fr'>Вернуться назад</a></div>"); 
+ echo ("<a href=\"index.html\" id='fr'><input type='button' value='Вернуться назад'></a></div>"); 
 /* Цикл вывода данных из базы конкретных полей */
 while ($row = mysql_fetch_array($res)) {
     echo "<tr>\n";

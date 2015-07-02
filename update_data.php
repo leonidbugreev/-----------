@@ -55,7 +55,7 @@ while ($row = @mysql_fetch_array($res)) {
     echo "<input type=\"hidden\" name=\"update\" value=\"".$row["id"]."\" />\n";   
     echo "<textarea autofocus rows='30' cols='140' name='test_mess'>".$row['message']."</textarea><br/>";
     echo "<input type=\"submit\" name=\"submit_edit\" value=\"Сохранить изменения\" />\n";
-	echo ("<a href=\"index.html\" id='fr'>Вернуться назад</a></div>");
+	echo ("<a href=\"index.html\" id='fr'><input type='button' value='Вернуться назад'></a></div>");
     echo "</form>\n\n";
 }
  

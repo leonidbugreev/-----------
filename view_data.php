@@ -137,6 +137,7 @@ mysql_close();
 <img src="images/3.png" class="zv" width="50px" height="50px"><p class="MR">© Министерство обороны Республики Казахстан<br>
 Все права защищены</p>
 <p class="lo" align="right" valign="right">Разработка-<a href="http://localhost/py/ ">Logitex </a></p>
+<p id="mob"><a  href="http://localhost/py/mob/index.html">Мобильная версия сайта</a></p>
 </div>
 </div>
 </body>
