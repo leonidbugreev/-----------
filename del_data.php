@@ -54,7 +54,8 @@ while ($row = mysql_fetch_array($res)) {
     echo "<p id='bor'>\n".$row['message']."</p>\n";
     /* Генерируем ссылку для удаления поля */
     echo "<td><a name=\"del\" href=\"del_data.php?del=".$row["id"]."\"><input type='button' value='Удалить'></a></td>\n";
-    echo "</tr>\n";
+	echo ("<a href=\"index.html\" id='fr'>Вернуться назад</a></div>");   
+   echo "</tr>\n";
 }
  
 /* Закрываем соединение */
