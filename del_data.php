@@ -19,7 +19,7 @@ mysql_query("SET SESSION collation_connection = 'utf8_general_ci';");
 @mysql_select_db($dbName) or die (mysql_error());
  
 /* Если была нажата ссылка удаления, удаляем запись */
-$del = $query = "delete from $table where (id='" . (int)$_GET['del'] . "')";
+$del = $query = "delete from $table where (id='".$_GET['del']."')";
 
 /* Выполняем запрос. Если произойдет ошибка - вывести ее. */
 @mysql_query($query) or die(mysql_error());
@@ -33,55 +33,32 @@ $row = mysql_num_rows($res);
  
 /* Выводим данные из таблицы */
 echo ("
-<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">
-<html xmlns=\"http://www.w3.org/1999/xhtml\">
+<!DOCTYPE html>
  
 <head>
- 
-    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=windows-1251\" />
- 
+	<link href='css/css.css' rel='stylesheet'>
     <title>Вывод и удаление данных из MySQL</title>
- 
-<style type=\"text/css\">
-<!--
-body { font: 12px Georgia; color: #666666; }
-h3 { font-size: 16px; text-align: center; }
-table { width: 700px; border-collapse: collapse; margin: 0px auto; background: #E6E6E6; }
-td { padding: 3px; text-align: center; vertical-align: middle; }
-.buttons { width: auto; border: double 1px #666666; background: #D6D6D6; }
--->
-</style>
- 
+	<script type='text/javascript' src='js/jquery-1.4.2.js'></script>
+	<script type='text/javascript' src='js/autoresize.jquery.min.js'></script>
+
 </head>
  
 <body>
  
 <h3>Вывод и удаление ранее сохраненных данных из таблицы MySQL</h3>
- 
-<table border=\"1\" cellpadding=\"0\" cellspacing=\"0\">
- <tr style=\"border: solid 1px #000\">
-  <td><b>#</b></td>
-  <td align=\"center\"><b>Сообщения пользователей</b></td>
-  <td align=\"center\"><b>Удаление</b></td>
- </tr>
 ");
  
 /* Цикл вывода данных из базы конкретных полей */
 while ($row = mysql_fetch_array($res)) {
     echo "<tr>\n";
-    echo "<td>".$row['id']."</td>\n";
-    echo "<td>".$row['message']."</td>\n";
+    echo "<p id='bor'>\n".$row['message']."</p>\n";
     /* Генерируем ссылку для удаления поля */
-    echo "<td><a name=\"del\" href=\"del_data.php?del=".$row["id"]."\">Удалить</a></td>\n";
+    echo "<td><a name=\"del\" href=\"del_data.php?del=".$row["id"]."\"><input type='button' value='Удалить'></a></td>\n";
     echo "</tr>\n";
 }
  
-echo ("</table>\n");
- 
 /* Закрываем соединение */
 mysql_close();
- 
-/* Выводим ссылку возврата */
-echo ("<div style=\"text-align: center; margin-top: 10px;\"><a href=\"index.html\">Вернуться назад</a></div>");
+
  
 ?>

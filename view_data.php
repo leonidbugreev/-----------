@@ -109,26 +109,13 @@ $res = mysql_query($query) or die(mysql_error());
  
 /* Выводим данные из таблицы */
 echo ("
-<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">
-<html xmlns=\"http://www.w3.org/1999/xhtml\">
+<!DOCTYPE html>
  
 <head>
 	<link href='css/styles.css' rel='stylesheet'>
-    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=windows-1251\" />
- 
+
     <title>Вывод данных из MySQL</title>
- 
-<style type=\"text/css\">
-<!--
-body { font: 12px Georgia; color: #666666; }
-h3 { font-size: 16px; text-align: center; }
-table { width: 700px; border-collapse: collapse; margin: 0px auto; background: #E6E6E6; }
-td { padding: 3px; text-align: center; vertical-align: middle; }
-.buttons { width: auto; border: double 1px #666666; background: #D6D6D6; }
--->
-</style>
- 
-</head>
+ </head>
  
 <body>
  <div id='text'>
@@ -149,7 +136,7 @@ mysql_close();
 <div class="clr">
 <img src="images/3.png" class="zv" width="50px" height="50px"><p class="MR">© Министерство обороны Республики Казахстан<br>
 Все права защищены</p>
-<p class="lo" align="right" valign="right">Разработка-<a href="http://localhost/py/ ">Logytex </a></p>
+<p class="lo" align="right" valign="right">Разработка-<a href="http://localhost/py/ ">Logitex </a></p>
 </div>
 </div>
 </body>

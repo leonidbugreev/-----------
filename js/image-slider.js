@@ -137,3 +137,25 @@ $('.outer a').click(function(e){
         }
     });
 })(jQuery);
+
+$(function() {
+	var txt = $('#comments'),
+	hiddenDiv = $(document.createElement('div')),
+	content = null;
+
+	txt.addClass('noscroll');
+	hiddenDiv.addClass('hiddendiv');
+
+	$('body').append(hiddenDiv);
+
+	txt.bind('keyup', function() {
+
+	    content = txt.val();
+	    content = content.replace(/\n/g, '<br>');
+	    hiddenDiv.html(content);
+
+	    txt.css('height', hiddenDiv.height());
+
+	});
+});
+
