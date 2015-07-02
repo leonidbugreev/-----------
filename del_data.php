@@ -45,16 +45,16 @@ echo ("
  
 <body>
  
-<h3>Вывод и удаление ранее сохраненных данных из таблицы MySQL</h3>
-");
- 
+<h3>Удаление данных</h3>"
+
+);
+ echo ("<a href=\"index.html\" id='fr'>Вернуться назад</a></div>"); 
 /* Цикл вывода данных из базы конкретных полей */
 while ($row = mysql_fetch_array($res)) {
     echo "<tr>\n";
     echo "<p id='bor'>\n".$row['message']."</p>\n";
     /* Генерируем ссылку для удаления поля */
-    echo "<td><a name=\"del\" href=\"del_data.php?del=".$row["id"]."\"><input type='button' value='Удалить'></a></td>\n";
-	echo ("<a href=\"index.html\" id='fr'>Вернуться назад</a></div>");   
+    echo "<td><a name=\"del\" href=\"del_data.php?del=".$row["id"]."\"><input type='button' value='Удалить'></a></td>\n";  
    echo "</tr>\n";
 }
  
